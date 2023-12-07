@@ -1,6 +1,7 @@
+import 'package:epixure_web/testingEngine/pages/registration.dart';
 import 'package:epixure_web/testingEngine/pages/report3.dart';
 import 'package:epixure_web/toolWidgets/horizontalChart.dart';
-import 'package:epixure_web/toolWidgets/wind_rose.dart';
+import 'package:epixure_web/toolWidgets/wavwChart.dart';
 import 'package:flutter/material.dart';
 
 import '../../res/colors.dart';
@@ -40,7 +41,7 @@ class Report2 extends StatelessWidget {
                   child: Column(children:[Container(
                       width: constraints.maxWidth,
                       color: bgMainColor,
-                      padding: const EdgeInsets.all(100.0),
+                      padding: constraints.maxWidth>600? const EdgeInsets.all(100.0): const EdgeInsets.all(20.0),
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
@@ -57,15 +58,21 @@ class Report2 extends StatelessWidget {
                             const SizedBox(height: 70,),
                             const Center(child: Text("Волновая функция", style: TextStyle(fontSize: 24))),
                             const SizedBox(height: 20,),
-                            Container(height: 400,),
+                            CustomLineChart(data: const {"Богатство": 2, "Здоровье":3, "Призвание": 5, "Окружение":2}),
                             const SizedBox(height: 70,),
-                            const Row(children: [
-                              Expanded(child: Text("""На основании результатов теста строится распределение плотности вероятности ваших энергетических состоятний. 
+                            if(constraints.maxWidth>600)Text("""На основании результатов теста строится распределение плотности вероятности ваших энергетических состоятний. 
+
+С помощью вычислений мы определяем в каком наиболее вероятном чувстве вы пребываете в тех или иных условиях реальности соприкаясь с разными сферами жизни.
+
+Наиболее веротяное состотяние, так называемое математическое ожидание, определяет численное значение на графике и наиболее близкое чувство по значению."""),
+                            Row(children: [
+                              if(constraints.maxWidth>600)const Expanded(child: Text("""На основании результатов теста строится распределение плотности вероятности ваших энергетических состоятний. 
 
 С помощью вычислений мы определяем в каком наиболее вероятном чувстве вы пребываете в тех или иных условиях реальности соприкаясь с разными сферами жизни.
 
 Наиболее веротяное состотяние, так называемое математическое ожидание, определяет численное значение на графике и наиболее близкое чувство по значению."""),),
-                              Column(children: [
+                              if(constraints.maxWidth>600)const SizedBox(width: 40),
+                              const Column(children: [
                                 Text("Ваш индекс:", style: TextStyle(fontSize: 20),),
                                 Text("168", style: TextStyle(fontSize: 28)),
                                 Text("Ваше “наиболее вероятное” состояние: ", style: TextStyle(fontSize: 18)),
@@ -84,19 +91,22 @@ class Report2 extends StatelessWidget {
                                       MaterialPageRoute(builder: (context) => Report3()),
                                     );
                                   },
-                                  child: const Text(
+                                  child: Text(
                                     'Продолжить тест\nмодуль3: Качество жизни',
-                                    style: TextStyle(fontSize: 20.0, color: Colors.black),
+                                    style: TextStyle(fontSize: constraints.maxWidth>600?20.0:14, color: Colors.black),
                                     textAlign: TextAlign.center,
                                   ),
                                 ),
                                 TextButton(
                                   onPressed: () {
-
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => Registration()),
+                                    );
                                   },
-                                  child: const Text(
+                                  child: Text(
                                     'Пройти оставшиеся\nтесты потом',
-                                    style: TextStyle(fontSize: 20.0, color: Colors.black),
+                                    style: TextStyle(fontSize: constraints.maxWidth>600?20.0:14, color: Colors.black),
                                     textAlign: TextAlign.center,
                                   ),
                                 ),

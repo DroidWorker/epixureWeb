@@ -1,9 +1,11 @@
+import 'package:epixure_web/testingEngine/pages/registration.dart';
 import 'package:epixure_web/testingEngine/pages/report5.dart';
 import 'package:epixure_web/toolWidgets/horizontalChart.dart';
 import 'package:epixure_web/toolWidgets/wind_rose.dart';
 import 'package:flutter/material.dart';
 
 import '../../res/colors.dart';
+import '../../toolWidgets/wavwChart.dart';
 
 class Report4 extends StatelessWidget {
 
@@ -38,7 +40,7 @@ class Report4 extends StatelessWidget {
                   child: Column(children:[Container(
                       width: constraints.maxWidth,
                       color: bgMainColor,
-                      padding: const EdgeInsets.all(100.0),
+                      padding: constraints.maxWidth>600? const EdgeInsets.all(100.0): const EdgeInsets.all(20.0),
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
@@ -54,8 +56,8 @@ class Report4 extends StatelessWidget {
                             HorizontalBarChart(barDataList: data1),
                             const Text("Чтобы расшифровать и сохранить результаты теста необходимо зарегестрироваться", style: TextStyle(fontSize: 18), textAlign: TextAlign.center,),
                             const SizedBox(height: 70,),
-                            const Row(children: [
-                              Expanded(child:Column(crossAxisAlignment: CrossAxisAlignment.start,
+                            Row(children: [
+                              const Expanded(child:Column(crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text("Колесо баланса", style: TextStyle(fontSize: 24),),
                                   SizedBox(height: 30,),
@@ -71,20 +73,27 @@ class Report4 extends StatelessWidget {
                                   SizedBox(height: 30,),
                                   Text('Важно пройти следующие модули для получения более реалистичных показателей.')
                                 ],)),
-                              WindRose(values: [0.2, 0.5, 0.1, 0.8, 0.6, 0.4, 0.8, 0.4])
+                              if(constraints.maxWidth>600)const WindRose(values: [0.2, 0.5, 0.1, 0.8, 0.6, 0.4, 0.8, 0.4])
                             ],),
+                            if(constraints.maxWidth<=600)const WindRose(values: [0.2, 0.5, 0.1, 0.8, 0.6, 0.4, 0.8, 0.4]),
                             const SizedBox(height: 70,),
                             const Center(child: Text("Волновая функция", style: TextStyle(fontSize: 24))),
                             const SizedBox(height: 20,),
-                            Container(height: 400,),
+                            CustomLineChart(data: const {"Богатство": 2, "Здоровье":3, "Призвание": 5, "Окружение":2}),
                             const SizedBox(height: 70,),
-                            const Row(children: [
-                              Expanded(child: Text("""На основании результатов теста строится распределение плотности вероятности ваших энергетических состоятний. 
+                            if(constraints.maxWidth<=600)const Text("""На основании результатов теста строится распределение плотности вероятности ваших энергетических состоятний. 
+
+С помощью вычислений мы определяем в каком наиболее вероятном чувстве вы пребываете в тех или иных условиях реальности соприкаясь с разными сферами жизни.
+
+Наиболее веротяное состотяние, так называемое математическое ожидание, определяет численное значение на графике и наиболее близкое чувство по значению."""),
+                            Row(children: [
+                              if(constraints.maxWidth>600)const Expanded(child: Text("""На основании результатов теста строится распределение плотности вероятности ваших энергетических состоятний. 
 
 С помощью вычислений мы определяем в каком наиболее вероятном чувстве вы пребываете в тех или иных условиях реальности соприкаясь с разными сферами жизни.
 
 Наиболее веротяное состотяние, так называемое математическое ожидание, определяет численное значение на графике и наиболее близкое чувство по значению."""),),
-                              Column(children: [
+                              if(constraints.maxWidth>600)const SizedBox(width: 40),
+                              const Column(children: [
                                 Text("Ваш индекс:", style: TextStyle(fontSize: 20),),
                                 Text("168", style: TextStyle(fontSize: 28)),
                                 Text("Ваше “наиболее вероятное” состояние: ", style: TextStyle(fontSize: 18)),
@@ -105,19 +114,21 @@ class Report4 extends StatelessWidget {
                                       MaterialPageRoute(builder: (context) => Report5()),
                                     );
                                   },
-                                  child: const Text(
+                                  child: Text(
                                     'Продолжить тест\nмодуль5: “Смертные грехи”',
-                                    style: TextStyle(fontSize: 20.0, color: Colors.black),
+                                    style: TextStyle(fontSize: constraints.maxWidth>600?20.0:14, color: Colors.black),
                                     textAlign: TextAlign.center,
                                   ),
                                 ),
                                 TextButton(
                                   onPressed: () {
-
-                                  },
-                                  child: const Text(
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => Registration()),
+                                    );                                  },
+                                  child: Text(
                                     'Пройти оставшиеся\nтесты потом',
-                                    style: TextStyle(fontSize: 20.0, color: Colors.black),
+                                    style: TextStyle(fontSize: constraints.maxWidth>600?20.0:14, color: Colors.black),
                                     textAlign: TextAlign.center,
                                   ),
                                 ),

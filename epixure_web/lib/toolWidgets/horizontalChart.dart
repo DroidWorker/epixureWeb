@@ -63,7 +63,7 @@ class HorizontalBarWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: List.generate(dividersCount-1, (index) {
                         return Container(
-                          width: 500 / dividersCount - 1, // Исправлено
+                          width: constraints.maxWidth / dividersCount - 1, // Исправлено
                           height: progressBarHeight,
                           margin: const EdgeInsets.only(right: 1), // Исправлено
                           decoration: BoxDecoration(

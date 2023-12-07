@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:chewie/chewie.dart';
 
 class VideoPlayerScreen extends StatefulWidget {
   final String videoUrl;
@@ -12,6 +13,8 @@ class VideoPlayerScreen extends StatefulWidget {
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   late VideoPlayerController _controller;
+  late ChewieController _chewieController;
+
   late Future<void> _initializeVideoPlayerFuture;
 
   @override
@@ -19,6 +22,12 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     super.initState();
     _controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl));
     _initializeVideoPlayerFuture = _controller.initialize();
+    _chewieController = ChewieController(
+      videoPlayerController: _controller,
+      autoInitialize: true,
+      looping: false,
+      // Опционально можно настроить дополнительные параметры
+    );
   }
 
   @override
@@ -26,11 +35,10 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     return FutureBuilder(
       future: _initializeVideoPlayerFuture,
       builder: (context, snapshot) {
-        _controller.play();
         if (snapshot.connectionState == ConnectionState.done) {
           return AspectRatio(
             aspectRatio: _controller.value.aspectRatio,
-            child: VideoPlayer(_controller),
+            child: Chewie(controller: _chewieController),
           );
         } else {
           return const Center(
@@ -44,6 +52,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   void dispose() {
     _controller.dispose();
+    _chewieController.dispose();
     super.dispose();
   }
 }

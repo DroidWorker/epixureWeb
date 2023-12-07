@@ -4,16 +4,39 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a49b62b7-4d0f-4759-947f-997086170c0a" name="Changes" comment="" />
+    <list default="true" id="a49b62b7-4d0f-4759-947f-997086170c0a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/afterregistration.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/registration.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/EmojiText.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/wavwChart.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/main_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/module.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/module.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report1.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report2.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report2.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report3.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report3.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report4.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report4.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report5.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report5.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/horizontalChart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/horizontalChart.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/video_player.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/video_player.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Z7W8q2x09uyRisp5OXp72rNbz4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,5 +69,16 @@
       <updated>1701773450578</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

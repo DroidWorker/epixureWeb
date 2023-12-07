@@ -37,6 +37,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.9
   video_player: ^2.8.1
+  chewie: ^1.7.4
+  syncfusion_flutter_charts: ^23.2.7
+
 
 dev_dependencies:
   flutter_test:
@@ -75,6 +78,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+  fonts:
+    - family: NotoColorEmoji
+      fonts:
+        - asset: lib/res/fonts/NotoColorEmoji.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:
