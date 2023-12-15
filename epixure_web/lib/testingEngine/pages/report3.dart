@@ -79,7 +79,7 @@ class Report3 extends StatelessWidget {
                             const SizedBox(height: 70,),
                             const Center(child: Text("Волновая функция", style: TextStyle(fontSize: 24))),
                             const SizedBox(height: 20,),
-                            CustomLineChart(data: const {"Богатство": 2, "Здоровье":3, "Призвание": 5, "Окружение":2}),
+                            CustomLineChart(data: const {"Богатство": 2, "Здоровье":3, "Призвание": 5, "Окружение":2}, expectations: const [0.20,0.30,0.50,0.75,1.00,1.25,1.50,1.75,2.00,2.50,3.10,3.50,4.00,5.00,5.40,6.00]),
                             const SizedBox(height: 70,),
                             if(constraints.maxWidth<=600)const Text("""На основании результатов теста строится распределение плотности вероятности ваших энергетических состоятний. 
 

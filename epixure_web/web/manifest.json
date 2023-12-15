@@ -1,6 +1,6 @@
 {
-    "name": "epixure_web",
-    "short_name": "epixure_web",
+    "name": "epixure",
+    "short_name": "epixure",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

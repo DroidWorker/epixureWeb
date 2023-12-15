@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a49b62b7-4d0f-4759-947f-997086170c0a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/afterregistration.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/registration.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/EmojiText.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/wavwChart.dart" afterDir="false" />
+    <list default="true" id="a49b62b7-4d0f-4759-947f-997086170c0a" name="Changes" comment="interface check">
+      <change afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/ViewModel.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/data/models.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/testingRepository.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/epixure_web/lib/tools/tools.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/.metadata" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/.metadata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/main_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/module.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/module.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report1.dart" afterDir="false" />
@@ -19,10 +22,13 @@
       <change beforePath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report3.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report3.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report4.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report4.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report5.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/testingEngine/pages/report5.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/horizontalChart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/horizontalChart.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/video_player.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/video_player.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/wavwChart.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/wavwChart.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/wind_rose.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/lib/toolWidgets/wind_rose.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epixure_web/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/epixure_web/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/test/widget_test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/epixure_web/web/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/epixure_web/web/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,18 +47,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;dev.polek.adbwifi.settings.AdbWifiConfigurable&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "F:/desktop/epixureWeb",
+    "settings.editor.selected.configurable": "dev.polek.adbwifi.settings.AdbWifiConfigurable",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/epixure_web/lib/main.dart" />
@@ -68,6 +75,14 @@
       <option name="presentableId" value="Default" />
       <updated>1701773450578</updated>
     </task>
+    <task id="LOCAL-00001" summary="interface check">
+      <created>1701983787416</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701983787416</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -80,5 +95,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="interface check" />
+    <option name="LAST_COMMIT_MESSAGE" value="interface check" />
   </component>
 </project>

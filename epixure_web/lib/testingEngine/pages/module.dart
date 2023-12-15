@@ -1,8 +1,11 @@
+import 'package:epixure_web/testingEngine/ViewModel.dart';
+import 'package:epixure_web/testingEngine/data/models.dart';
 import 'package:epixure_web/testingEngine/pages/report1.dart';
 import 'package:epixure_web/toolWidgets/EmojiText.dart';
 import 'package:epixure_web/toolWidgets/video_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../res/colors.dart';
 
@@ -13,12 +16,30 @@ class Module1 extends StatefulWidget {
 }
 
 class Module1State extends State{
+  late TestViewModel vm;
   bool isVideoVisible = true;
+  List<Question> questions = [];
   var step = 1;
-  final maxStep = 21;
+  var maxStep = 21;
+
+  @override
+  void initState() {
+    super.initState();
+    // Получаем экземпляр ViewModel
+    vm = Provider.of<TestViewModel>(context, listen: false);
+
+    // Вызываем методы во ViewModel только один раз
+    vm.getmoduleName();
+    vm.getQuestions();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Consumer<TestViewModel>(builder: (context, viewModel, child){
+      questions= viewModel.questionsAndKoeffs;
+      if(questions.isNotEmpty)maxStep=questions.length;
+
+      return Scaffold(
         appBar: AppBar(
             backgroundColor: appbarColor,
             scrolledUnderElevation: 0,
@@ -40,7 +61,7 @@ class Module1State extends State{
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Center(child: Text('Модуль 1:  Сферы жизни', style: TextStyle(fontSize: 20),),),
+                                Center(child: Text(viewModel.moduleName, style: const TextStyle(fontSize: 20),),),
                                 step>9?const SizedBox(height: 40,):Container(),
                                 (step>9&&step<21)? Center(child: EmojiText(text: 'Хорошо идем 👍 10 вопросов позади', style: const TextStyle(fontSize: 18),)): step>19? Center(child: EmojiText(text: 'Отлично 🙂 20 вопросов позади', style: const TextStyle(fontSize: 18),),):Container(),
                                 const SizedBox(height: 40,),
@@ -87,7 +108,7 @@ class Module1State extends State{
                                            Align(
                                             alignment: Alignment.centerLeft,
                                             child: Text(
-                                              '   Утверждение $step из 21 (${(step*100)~/21}%)', // Текст внутри progress bar
+                                              '   Утверждение $step из $maxStep (${(step*100)~/maxStep}%)', // Текст внутри progress bar
                                               style: const TextStyle(
                                                 color: Colors.black,
                                                 fontSize: 16.0,
@@ -100,7 +121,7 @@ class Module1State extends State{
                                 const SizedBox(height:30,),
                                 const Text('Оцените утверждение ниже', textAlign: TextAlign.left,),
                                 const SizedBox(height: 20,),
-                                const Text('Я состою в счастливых и гармоничных отношениях', style: TextStyle(fontSize: 22),),
+                                Text(questions.isNotEmpty?questions[step-1].question:"", style: const TextStyle(fontSize: 22),),
                                 const SizedBox(height: 30,),
                                 Row(children: [
                                   Expanded(child:Column(
@@ -116,9 +137,11 @@ class Module1State extends State{
                                       ),
                                       onPressed: () {
                                         setState(() {
+                                          viewModel.ansversM1.add(1);
                                           if(step!=maxStep) {
                                             step++;
                                           } else{
+                                            viewModel.calculateResult();
                                             Navigator.push(
                                               context,
                                               MaterialPageRoute(builder: (context) => Report1()),
@@ -126,8 +149,8 @@ class Module1State extends State{
                                           }
                                         });
                                       },
-                                      child: const Text(
-                                        'Согласен',
+                                      child: Text(
+                                        questions.isNotEmpty?questions[step-1].answers[0]:'Согласен',
                                         style: TextStyle(fontSize: 20.0, color: Colors.black),
                                       ),
                                     ),
@@ -142,9 +165,11 @@ class Module1State extends State{
                                       ),
                                       onPressed: () {
                                         setState(() {
+                                          viewModel.ansversM1.add(0.75);
                                           if(step!=maxStep) {
                                             step++;
                                           } else{
+                                            viewModel.calculateResult();
                                             Navigator.push(
                                               context,
                                               MaterialPageRoute(builder: (context) => Report1()),
@@ -152,8 +177,8 @@ class Module1State extends State{
                                           }
                                         });
                                       },
-                                      child: const Text(
-                                        'Скорее согласен',
+                                      child:  Text(
+                                        questions.isNotEmpty?questions[step-1].answers[1]:'Скорее согласен',
                                         style: TextStyle(fontSize: 18.0, color: Colors.black),
                                       ),
                                     ),
@@ -168,9 +193,11 @@ class Module1State extends State{
                                       ),
                                       onPressed: () {
                                         setState(() {
+                                          viewModel.ansversM1.add(0.5);
                                           if(step!=maxStep) {
                                             step++;
                                           } else{
+                                            viewModel.calculateResult();
                                             Navigator.push(
                                               context,
                                               MaterialPageRoute(builder: (context) => Report1()),
@@ -178,8 +205,8 @@ class Module1State extends State{
                                           }
                                         });
                                       },
-                                      child: const Text(
-                                        'Нечто среднее',
+                                      child: Text(
+                                        questions.isNotEmpty?questions[step-1].answers[2]:'Нечто среднее',
                                         style: TextStyle(fontSize: 18.0, color: Colors.black),
                                       ),
                                     ),
@@ -194,9 +221,11 @@ class Module1State extends State{
                                       ),
                                       onPressed: () {
                                         setState(() {
+                                          viewModel.ansversM1.add(0.25);
                                           if(step!=maxStep) {
                                             step++;
                                           } else{
+                                            viewModel.calculateResult();
                                             Navigator.push(
                                               context,
                                               MaterialPageRoute(builder: (context) => Report1()),
@@ -204,9 +233,9 @@ class Module1State extends State{
                                           }
                                         });
                                       },
-                                      child: const Text(
-                                        'Скорее не согласен',
-                                        style: TextStyle(fontSize: 18.0, color: Colors.black),
+                                      child: Text(
+                                        questions.isNotEmpty?questions[step-1].answers[3]:'Скорее не согласен',
+                                        style: const TextStyle(fontSize: 18.0, color: Colors.black),
                                       ),
                                     ),
                                     const SizedBox(height: 30,),
@@ -220,9 +249,11 @@ class Module1State extends State{
                                       ),
                                       onPressed: () {
                                         setState(() {
+                                          viewModel.ansversM1.add(0);
                                           if(step!=maxStep) {
                                             step++;
                                           } else{
+                                            viewModel.calculateResult();
                                             Navigator.push(
                                               context,
                                               MaterialPageRoute(builder: (context) => Report1()),
@@ -230,9 +261,9 @@ class Module1State extends State{
                                           }
                                         });
                                       },
-                                      child: const Text(
-                                        'Не согласен',
-                                        style: TextStyle(fontSize: 20.0, color: Colors.black),
+                                      child: Text(
+                                        questions.isNotEmpty?questions[step-1].answers[4]:'Не согласен',
+                                        style: const TextStyle(fontSize: 20.0, color: Colors.black),
                                       ),
                                     ),
                                     const SizedBox(height: 30,),
@@ -262,7 +293,11 @@ class Module1State extends State{
                     height: 100,
                     color: footerColor,
                   )
-                  ]));
-            }));
+                  ])
+              );
+            })
+      );
+    }
+    );
   }
 }
