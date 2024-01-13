@@ -57,6 +57,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.2"
+  cross_scroll:
+    dependency: "direct main"
+    description:
+      name: cross_scroll
+      sha256: "50d2006d51c0640887928200c8561c6833a6f98d576f6fcb62f4f2f5916d0056"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.76"
   csslib:
     dependency: transitive
     description:
@@ -97,6 +105,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.0"
+  fluro:
+    dependency: "direct main"
+    description:
+      name: fluro
+      sha256: "24d07d0b285b213ec2045b83e85d076185fa5c23651e44dae0ac6755784b97d0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.5"
   flutter:
     dependency: "direct main"
     description: flutter

@@ -13,6 +13,7 @@ class TestViewModel extends ChangeNotifier{
   String moduleName = "";
   //test1
   List<double> ansversM1 = [];
+  List<List<List<int>>> hokinsKoefs = [];
   Map<String, double> resultM1 = {};
   Map<String, double> hokinsResultM1 = {};
   Future getmoduleName()async {
@@ -20,6 +21,10 @@ class TestViewModel extends ChangeNotifier{
   }
   Future getQuestions()async {
     questionsAndKoeffs = await repository.getQuestions(1);
+    notifyListeners();
+  }
+  Future getHokinsKoefs()async {
+    hokinsKoefs = await repository.getHokins();
     notifyListeners();
   }
   Future calculateResult()async {

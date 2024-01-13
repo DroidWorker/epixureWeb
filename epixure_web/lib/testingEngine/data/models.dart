@@ -1,7 +1,7 @@
 class Question{
-  final String question;
+  String question;
   final List<String> answers;
-  final List<int> indexes;
+  final List<double> indexes;
 
   Question({required this.question, required this.answers, required this.indexes});
 }

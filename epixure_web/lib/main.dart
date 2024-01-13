@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:epixure_web/router.dart';
 import 'package:epixure_web/testingEngine/ViewModel.dart';
 import 'package:epixure_web/testingEngine/pages/main_page.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +15,7 @@ void main() async{
     create: (context) => appViewModel,
     child:  const MyApp(),
   ));
+  AppRouter.setupRouter();
 }
 
 class MyApp extends StatelessWidget {
@@ -41,6 +45,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+        onGenerateRoute: AppRouter.router.generator,
       home: const MainPage()
     );
   }
