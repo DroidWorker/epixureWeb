@@ -1,6 +1,5 @@
 import 'package:epixure_web/testingEngine/pages/admin_panel.dart';
 import 'package:epixure_web/testingEngine/pages/module_admin.dart';
-import 'package:epixure_web/testingEngine/pages/registration.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 

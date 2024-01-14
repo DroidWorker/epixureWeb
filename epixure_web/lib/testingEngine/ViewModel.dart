@@ -6,8 +6,8 @@ import 'data/models.dart';
 class TestViewModel extends ChangeNotifier{
   final repository = TestingRepository();
   bool isInLoading = false;
-  init(){
-
+  init() {
+    hokinsKoefs = repository.getHokins();
   }
   List<Question> questionsAndKoeffs = [];
   String moduleName = "";
@@ -72,5 +72,9 @@ class TestViewModel extends ChangeNotifier{
 
       notifyListeners();
     }
+  }
+
+  List<List<int>> getHokinsForQuestion(int qNumber) {
+    return hokinsKoefs[qNumber];
   }
 }

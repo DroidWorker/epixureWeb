@@ -19,15 +19,30 @@ class WindRosePainter extends CustomPainter {
   final List<double> values;
   final List<String> labels = ["Богатство", "Саморазвитие", "Яркость жизни", "Духовность", "Здоровье", "Отношения", "Окружение", "Призвание"];
 
-  WindRosePainter({required this.values});
-
-  @override
-  void paint(Canvas canvas, Size size) {
+  WindRosePainter({required this.values}){
     values.add(values[0]);
     values.add(values[1]);
     values.removeAt(0);
     values.removeAt(0);
+  }
 
+  final Paint borderPaint = Paint()
+    ..color = const Color.fromARGB(255, 158, 1, 255)
+    ..style = PaintingStyle.stroke
+    ..strokeWidth = 1.0;
+
+  final Paint fillPaint = Paint()
+    ..color = const Color.fromARGB(255, 255, 0, 107).withOpacity(0.3) // Задайте цвет заливки с некоторой непрозрачностью
+    ..style = PaintingStyle.fill;
+
+  final Paint pointPaint = Paint()
+    ..color = const Color.fromARGB(255, 158, 1, 255)
+    ..style = PaintingStyle.fill;
+
+  final double maxValue = 100;//values.reduce((value, element) => value > element ? value : element);
+
+  @override
+  void paint(Canvas canvas, Size size) {
     final double centerX = size.width / 2;
     final double centerY = size.height / 2;
     final double radius = size.width / 2;
@@ -36,21 +51,6 @@ class WindRosePainter extends CustomPainter {
       ..color = Colors.red
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.0;
-
-    final Paint borderPaint = Paint()
-      ..color = const Color.fromARGB(255, 158, 1, 255)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.0;
-
-    final Paint fillPaint = Paint()
-      ..color = const Color.fromARGB(255, 255, 0, 107).withOpacity(0.3) // Задайте цвет заливки с некоторой непрозрачностью
-      ..style = PaintingStyle.fill;
-
-    final Paint pointPaint = Paint()
-      ..color = const Color.fromARGB(255, 158, 1, 255)
-      ..style = PaintingStyle.fill;
-
-    final double maxValue = 100;//values.reduce((value, element) => value > element ? value : element);
 
     final Path fillPath = Path();
 
